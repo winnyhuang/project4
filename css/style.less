@@ -1,0 +1,46 @@
+@height:400px;
+@blue:blue;
+@gray:gray;
+@border:1px solid gray;
+@space:40px;
+
+
+.flip-container{
+	height:@height;
+	perspective:1000;
+	text-align:center;
+	margin-top:@space;
+	margin-bottom:@space;
+	border:@border;
+
+	h1{
+		opacity:0;
+		-webkit-transition: opacity 0.6s ease-in;
+	}
+
+	&:hover h1{
+		opacity:1;
+
+	}
+
+}
+
+
+.front, .back{
+	-webkit-backface-visibility:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100px;
+	width:100px
+}
+
+.front{
+	z-index:2;
+	background:white;
+}
+
+.back{
+	background:@blue;
+	display:block;
+}
